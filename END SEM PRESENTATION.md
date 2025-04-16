@@ -1,10 +1,3 @@
----
-marp: true
-theme: default
-paginate: true
-backgroundColor: #fff
----
-
 <!-- slide: title -->
 # 🏢 Assets Management System
 ### Object-Oriented Programming (OOP) Project
