@@ -23,9 +23,9 @@ bool valid_name(string name) {
 }
 
 // Function to add a small delay
-void smoldelay() {
-    std::this_thread::sleep_for(std::chrono::seconds(2));
-}
+//void smoldelay() {
+//    std::this_thread::sleep_for(std::chrono::seconds(2));
+//}
 
 int main() {
     int choice;
@@ -81,14 +81,14 @@ int main() {
 
             if (found) {
                 cout << "\n*** ERROR! USER ALREADY EXISTS! ***" << endl;
-                std::thread t(smoldelay);
-                t.join();
+                //std::thread t(smoldelay);
+                //t.join();
             }
             else {
                 investors[index++].set_username(usrname);
                 cout << "\n*** INVESTOR ADDED SUCCESSFULLY! ***\n";
-                std::thread t(smoldelay);
-                t.join();
+                //std::thread t(smoldelay);
+                //t.join();
             }
         }
         else if (choice == 2) {
@@ -122,8 +122,8 @@ int main() {
 
             if (!found) {
                 cout << "\n*** ERROR! USER DOES NOT EXIST! ***" << endl;
-                std::thread t(smoldelay);
-                t.join();
+                //std::thread t(smoldelay);
+                //t.join();
             }
         }
     }
