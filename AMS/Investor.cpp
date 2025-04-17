@@ -10,9 +10,9 @@ bool valid_symbol(string sym) {
 	return false;
 }
 // Function to introduce a small delay using sleep_for
-void stockdelay() {
-	std::this_thread::sleep_for(std::chrono::seconds(2));
-}
+//void stockdelay() {
+//	std::this_thread::sleep_for(std::chrono::seconds(2));
+//}
 // Constructor for Investor class
 Investor::Investor() {
 	stocks = new Stocks * [10];
@@ -87,8 +87,8 @@ void Investor::add_assets()
 						found = true;
 						stocks[i]->add_stocks();
 						cout << "\n*** STOCK ADDED SUCCESSFULLY! ***\n";
-						std::thread t(stockdelay);
-						t.join();
+						//std::thread t(stockdelay);
+						//t.join();
 						break;
 					}
 				}
@@ -97,8 +97,8 @@ void Investor::add_assets()
 				{
 					stocks[index++] = new Simple_Stocks(symbol, "SIMPLE");
 					cout << "\n*** STOCK ADDED SUCCESSFULLY! ***\n";
-					std::thread t(stockdelay);
-					t.join();
+					//std::thread t(stockdelay);
+					//t.join();
 				}
 			}
 			else if (choice == 2)
@@ -126,8 +126,8 @@ void Investor::add_assets()
 						stocks[i]->add_stocks();
 						found = true;
 						cout << "\n*** STOCK ADDED SUCCESSFULLY! ***\n";
-						std::thread t(stockdelay);
-						t.join();
+						//std::thread t(stockdelay);
+						//t.join();
 						break;
 					}
 				}
@@ -136,8 +136,8 @@ void Investor::add_assets()
 				{
 					stocks[index++] = new Dividend_Stocks(symbol, "DIVIDEND");
 					cout << "\n*** STOCK ADDED SUCCESSFULLY! ***\n";
-					std::thread t(stockdelay);
-					t.join();
+					//std::thread t(stockdelay);
+					//t.join();
 				}
 			}
 		}
@@ -155,8 +155,8 @@ void Investor::add_assets()
 			cin >> am;
 			currency += am;
 			cout << "\n*** CURRENCY ADDED SUCCESSFULLY ***";
-			std::thread t(stockdelay);
-			t.join();
+			//std::thread t(stockdelay);
+			//t.join();
 		}
 		else if (choice == 4)
 		{
@@ -164,8 +164,8 @@ void Investor::add_assets()
 			}
 		else {
 			cout << "\n*** ERROR! INVALID OPTION ENTERED ***\n";
-			std::thread t(stockdelay);
-			t.join();
+			//std::thread t(stockdelay);
+			//t.join();
 		}
 	}
 }
@@ -312,8 +312,8 @@ void Investor::change_prices()
 						stocks[i]->set_current_price(price);
 						cout << "\n*** NEW PRICE SET FOR " << stocks[i]->get_symbol() << " FROM $" << old << " TO $" << stocks[i]->get_current_price() << endl;
 						found = true;
-						std::thread t(stockdelay);
-						t.join();
+						//std::thread t(stockdelay);
+						//t.join();
 					}
 					else {
 						cout << "\n *** STOCK TYPE: DIVIDEND ***\n";
@@ -337,8 +337,8 @@ void Investor::change_prices()
 							cout << "\n*** NEW PRICE SET FOR " << stocks[i]->get_symbol() << " FROM $" << old << " TO $" << stocks[i]->get_current_price() << endl;
 
 							found = true;
-							std::thread t(stockdelay);
-							t.join();
+							//std::thread t(stockdelay);
+							//t.join();
 						}
 						else if (choice == 2) {
 							int dividends = stocks[i]->get_dividend();
@@ -349,13 +349,13 @@ void Investor::change_prices()
 							cout << "\n*** NEW DIVIDENDS SET FOR " << stocks[i]->get_symbol() << " FROM " << dividends << " TO " << stocks[i]->get_dividend() << endl;
 
 							found = true;
-							std::thread t(stockdelay);
-							t.join();
+							//std::thread t(stockdelay);
+							//t.join();
 						}
 						else {
 							cout << "\n*** INVALID OPTION ENTERED ***\n";
-							std::thread t(stockdelay);
-							t.join();
+							//std::thread t(stockdelay);
+							//t.join();
 						}
 
 					}
@@ -365,8 +365,8 @@ void Investor::change_prices()
 			if (!found)
 			{
 				cout << "\n*** ERROR! STOCK NOT FOUND IN DATABASE ***" << endl;
-				std::thread t(stockdelay);
-				t.join();
+				//std::thread t(stockdelay);
+				//t.join();
 			}
 		}
 		else if (choice == 2) {
@@ -393,8 +393,8 @@ void Investor::change_prices()
 			sr--;
 			if (sr > res_index || sr < 0) {
 				cout << "\n*** ERROR! INVALID SR.NO ENTERED ***" << endl;
-				std::thread t(stockdelay);
-				t.join();
+				//std::thread t(stockdelay);
+				//t.join();
 			}
 			else {
 				cout << "\nENTER CURRENT (NEW) PRICE OF REAL ESTATE ASSET: ";
@@ -408,8 +408,8 @@ void Investor::change_prices()
 				long double oldprice = real_estates[sr].get_current_price();
 				real_estates[sr].set_current_price(price);
 				cout << "\n*** NEW PRICE SET FOR REAL ESTATE AT LOCATION " << real_estates[sr].get_location() << " FROM $" << oldprice << " TO $" << real_estates[sr].get_current_price() << endl;
-				std::thread t(stockdelay);
-				t.join();
+				//std::thread t(stockdelay);
+				//t.join();
 			}
 
 		}
