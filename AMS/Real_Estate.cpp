@@ -11,9 +11,9 @@ bool valid_space(string spc) {
 }
 
 // Function to add a small delay
-void estatedelay() {
-    std::this_thread::sleep_for(std::chrono::seconds(2));
-}
+//void estatedelay() {
+//    std::this_thread::sleep_for(std::chrono::seconds(2));
+//}
 
 // Getter function for location
 string Real_Estate::get_location() { return location; }
@@ -73,8 +73,8 @@ void Real_Estate::get_info() {
     }
     current_market_value = cost;
     cout << "\n*** REAL ESTATE ADDED SUCCESSFULLY ***\n";
-    std::thread t(estatedelay);
-    t.join();
+    //std::thread t(estatedelay);
+    //t.join();
 }
 
 // Function to calculate the profit of the real estate
